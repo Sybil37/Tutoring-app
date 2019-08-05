@@ -134,6 +134,7 @@ GEM
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
     orm_adapter (0.5.0)
+    pg (0.21.0)
     public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -246,13 +247,14 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-facebook
+  pg (~> 0.18)
   puma (~> 3.11)
   rails (~> 6.0.0.rc2)
   sass-rails (~> 5)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
+  sqlite3
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
