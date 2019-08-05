@@ -1,0 +1,13 @@
+<h1>Welcome </h1>
+
+<% if user_signed_in?%>
+
+<p> <%= link_to "sign out", destroy_user_session_path, :method => 'delete'%> </p>
+
+<%else%>
+
+<p> <%= link_to "sign in", new_user_session_path%> </p>
+
+<%end%>
+
+<p> <%= link_to "Become a tutor", "tutors/new" %> </p>
