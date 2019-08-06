@@ -122,7 +122,7 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.omniauth :facebook, Rails.application.credentials.facebook_id, Rails.application.credentials.facebook_key, callback_url: Rails.application.credentials.hostname + "/users/auth/facebook/callback"
+  # config.omniauth :facebook, Rails.application.credentials.facebook_id, Rails.application.credentials.facebook_key, callback_url: Rails.application.credentials.hostname + "/users/auth/facebook/callback"
 
-  ENV["hostname"]
+  # ENV["hostname"]
 end
