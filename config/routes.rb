@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/tutors/new' => "tutors#new"
   post 'tutors' => "tutors#create"
   get '/show/:id' => "tutors#show"
-  devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: {  omniauth_callbacks: 'users/omniauth_callbacks' registrations: 'users/registrations', }
   # devise_scope :user do
   #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # end
