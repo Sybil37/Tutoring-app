@@ -32,7 +32,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
-gem 'omniauth-rails_csrf_protection'
+# gem 'omniauth-rails_csrf_protection'
 gem 'aws-sdk-s3', require: false
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'premailer-rails'
