@@ -20,10 +20,11 @@ Rails.application.configure do
   #   api_key: Rails.application.credentials.mailgun_api,
   #   domain: 'sandboxa1aa5184662d47dd942ce2242676770d.mailgun.org'
   # }
+  byebug
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'gmail.com',
+    domain:               'smtp.gmail.com',
     user_name:            Rails.application.credentials.user_name,
     password:             Rails.application.credentials.password,
     authentication:       :plain,
