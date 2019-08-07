@@ -15,15 +15,15 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: Rails.application.credentials.mailgun_api,
-    domain: 'sandboxa1aa5184662d47dd942ce2242676770d.mailgun.org'
-  }
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.mailgun_settings = {
+  #   api_key: Rails.application.credentials.mailgun_api,
+  #   domain: 'sandboxa1aa5184662d47dd942ce2242676770d.mailgun.org'
+  # }
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'herokuapp.com',
+    domain:               'www.sybling.com',
     user_name:            Rails.application.credentials.user_name,
     password:             Rails.application.credentials.password,
     authentication:       :plain,
