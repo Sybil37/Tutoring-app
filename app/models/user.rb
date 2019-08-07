@@ -1,9 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable
-  devise :omniauthable, omniauth_providers: %i[facebook]
+  devise :database_authenticatable, :registerable, :async,
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
   def self.from_omniauth(auth)
     # byebug
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -15,6 +14,8 @@ class User < ApplicationRecord
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
+
+    
   end
 end
 
@@ -29,5 +30,4 @@ end
 # ...................................
 # class User < ActiveRecord::Base
 # def password
-#     @password ||= Password.new(password_hash)
-# end
+#     @password ||= Password.new(password_hz
