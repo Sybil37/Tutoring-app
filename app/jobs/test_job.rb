@@ -4,6 +4,6 @@ class TestJob < ApplicationJob
   def perform(user)
     # Do something later
     sleep(10)
-    user.update(email: user.email.gsub(".com", ".my")
+    user.update(email: user.email.gsub(".com", ".my"))
   end
 end
