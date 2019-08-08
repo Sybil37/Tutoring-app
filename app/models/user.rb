@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
-  after_create_commit :send_pending_devise_notifications
+  after_commit :send_pending_devise_notifications
   after_create_commit :send_welcome_mail
 
 
@@ -78,7 +78,7 @@ class User < ApplicationRecord
 
   
   def send_devise_notification(notification, *args)
-    devise_mailer.send(notification, self, *args).deliver_later
+    devise_mailer.send(notification, self, *args).deliver_now
   end
 end
 
