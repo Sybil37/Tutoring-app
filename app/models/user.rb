@@ -74,7 +74,8 @@ class User < ApplicationRecord
   end
 
   def send_welcome_mail
-    UserMailer.welcome_email(@user).deliver_later
+    # byebug
+    UserMailer.welcome_email(self).deliver_later
   end
 
   
