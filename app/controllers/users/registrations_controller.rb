@@ -13,9 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    UserMailer.welcome_email(@user).deliver_later
-    
-
   end
 
   # GET /resource/edit
