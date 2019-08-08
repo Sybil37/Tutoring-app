@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
-  after_commit :send_pending_devise_notifications
+  after_create_commit :send_pending_devise_notifications
   after_create_commit :send_welcome_mail
 
 
@@ -32,7 +32,6 @@ class User < ApplicationRecord
               # delivery until the after_commit callback otherwise
               # send now because after_commit will not be called.
       # byebug
-      p "QUEUING EMAIL"
       if new_record? || changed?
           pending_devise_notifications << [notification, args]
       else
@@ -43,7 +42,6 @@ class User < ApplicationRecord
   private
       
   def send_pending_devise_notifications
-    p "SENDING EMAIL"
 
           pending_devise_notifications.each do |notification, args|
           render_and_send_devise_message(notification, *args)
