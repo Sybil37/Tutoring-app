@@ -25,11 +25,14 @@ class User < ApplicationRecord
   end
 
   protected
+
       
   def send_devise_notification(notification, *args)
               # If the record is new or changed then delay the
               # delivery until the after_commit callback otherwise
               # send now because after_commit will not be called.
+      # byebug
+      p "QUEUING EMAIL"
       if new_record? || changed?
           pending_devise_notifications << [notification, args]
       else
@@ -40,6 +43,8 @@ class User < ApplicationRecord
   private
       
   def send_pending_devise_notifications
+    p "SENDING EMAIL"
+
           pending_devise_notifications.each do |notification, args|
           render_and_send_devise_message(notification, *args)
           end
@@ -73,9 +78,9 @@ class User < ApplicationRecord
   end
 
   
-  # def send_devise_notification(notification, *args)
-  #   devise_mailer.send(notification, self, *args).deliver_later
-  # end
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end
 
 # application_controllers
