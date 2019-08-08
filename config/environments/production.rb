@@ -21,6 +21,8 @@ Rails.application.configure do
   #   domain: 'sandboxa1aa5184662d47dd942ce2242676770d.mailgun.org'
   # }
   # byebug
+  config.action_mailer.default_url_options = { host: 'www.sybling.site'}
+
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
