@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
   after_commit :send_pending_devise_notifications
-  after_commit :send_welcome_mail, on: create
+  after_create_commit :send_welcome_mail
 
 
 
