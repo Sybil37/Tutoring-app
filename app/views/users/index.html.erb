@@ -1,15 +1,3 @@
-<h1>Welcome </h1>
-
-<% if user_signed_in?%>
-
-<p> <%= link_to "sign out", destroy_user_session_path, :method => 'delete'%> </p>
-
-<%else%>
-
-<p> <%= link_to "sign in", new_user_session_path%> </p>
-<p> <%= link_to "sign up", new_user_registration_path%> </p>
-
-
-<%end%>
-
-<p> <%= link_to "Become a tutor", "tutors/new" %> </p>
+<div>
+<p>This is a world of Opportunities</p>
+</div>

@@ -39,6 +39,16 @@ gem 'premailer-rails'
 gem 'sidekiq'
 gem 'searchkick'
 # gem 'devise-async'
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass'
+gem 'simple_form'
+gem 'mini_magick'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-passenger'
+gem 'capistrano-rbenv'
+
 
 
 

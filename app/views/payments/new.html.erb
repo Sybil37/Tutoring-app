@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+  <form action="/charge" method="post" id="payment-form">
+ <div class="form-row">
+   <label for="card-element">
+     Credit or debit card
+   </label>
+   <div id="card-element">
+     <!-- A Stripe Element will be inserted here. -->
+   </div>
+
+   <!-- Used to display form errors. -->
+   <div id="card-errors" role="alert"></div>
+ </div>
+
+ <button>Submit Payment</button>
+</form>
+
+
+<%@session.id%>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+var stripe = Stripe('pk_test_bBipPcrHUlqggqVDcbbPT4ZL003K5KT1Mp')
+</script>
+<script>
+stripe.redirectToCheckout({
+  // Make the id field from the Checkout Session creation API response
+  // available to this file, so you can provide it as parameter here
+  // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+  sessionId: '<%=@session.id%>'
+}).then(function (result) {
+  // If `redirectToCheckout` fails due to a browser or network
+  // error, display the localized error message to your customer
+  // using `result.error.message`.
+});
+</script>
+  </body>
+</html

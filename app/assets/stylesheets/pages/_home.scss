@@ -1,0 +1,36 @@
+// Specific CSS for your home-page
+.size {
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.mybox {
+    height: 600px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+}
+
+body {
+    background-color: #CACFD2;
+}
+
+p {
+    font-size: 70px;
+    font-family: monospace;
+
+}
+
+.border {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 10px;
+}

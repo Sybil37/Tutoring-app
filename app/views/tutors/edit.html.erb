@@ -1,0 +1,14 @@
+<%= form_for(@tutor) do |f| %>
+<div>
+
+<%= f.label :name%> <br>
+<%= f.text_field :name%> <br>
+<%= f.label :subject%> <br>
+<%= f.text_field :subject%><br>
+<%=image_tag @tutor.picture.variant(resize: "300x300")%> <br>
+<%= f.select :education, options_for_select([["None", "none"], ["Dropout","dropout"], ["Bachelors", "bachelors"], ["Masters", "masters"], ["PHD", "phd"]])%>
+</div>
+<div>
+<%= f.submit "Submit"%>
+</div>
+<%end%>

@@ -1,5 +1,14 @@
 
-<%=image_tag @tutor.picture%>
-<%=@tutor.name%>
-<%=@tutor.subject%>
+<div class="mybox">
+<div class="border"><%=image_tag @tutor.picture.variant(resize: "300x300")%></div>
+<div><%=@tutor.name%></div>
+<div><%=@tutor.subject%></div>
+<div><%=@tutor.education%></div>
+
+</div>
+
+<div><%= link_to "Edit", edit_tutor_path, class: "nav-link"%></div>
+<%# <div><%= link_to "Delete", destroy_tutor_path, class: "nav-link"%></div> %>
+
+
 
