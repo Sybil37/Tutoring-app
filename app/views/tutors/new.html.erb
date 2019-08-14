@@ -66,11 +66,13 @@
 
 <%= form_for(@tutor) do |f| %>
 <div>
-<%= f.label :name%> <br>
-<%= f.text_field :name%> <br>
-<%= f.label :subject%> <br>
+<h6><%= f.label :name%></h6> 
+<%= f.text_field :name%>
+<br>
+<h6><%= f.label :subject%></h6> 
 <%= f.text_field :subject%><br>
 <%=f.file_field :picture%> <br>
+<h6> What is your highest level of education?</h6>
 <%= f.select :education, options_for_select([["None", "none"], ["Dropout","dropout"], ["Bachelors", "bachelors"], ["Masters", "masters"], ["PHD", "phd"]])%>
 </div>
 <div>
@@ -183,7 +185,7 @@ function geolocate() {
   }
 }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLwih_dEjx7rHvO04och6w_zABvfO8Dcw&libraries=places&callback=initAutocomplete"
         async defer></script>
   </body>
 </html>
